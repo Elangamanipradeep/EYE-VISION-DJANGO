@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order Page</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .Heading_eye{
+            margin-left: 150px;
+        }
+        input{
+            border: 1px solid rgb(203, 199, 199);
+            width: 250px; 
+            padding: 5px;
+        }
+        ::placeholder{
+            font-size: 15px;
+        }
+        .product{
+            border-bottom: 2px solid black;
+        }
+        #number input[type="number"]::-webkit-inner-spin-button,
+               input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none; 
+            margin: 0; 
+        } 
+        
+        .qty_sub{
+            width: 100px;
+        }
+        .qty_sub input[type="button"]::-webkit-inner-spin-button,
+               input[type="button"]::-webkit-outer-spin-button {
+            -webkit-appearance: none; 
+            margin: 0; 
+        } 
+
+        .qty_button{
+            width: 30px;
+            background-color: black;
+            color: white;
+            display: grid;
+            place-items: center;
+        }
+        .sub_container2{
+            width: 600px;
+        }
+        
+        @media screen and (max-width:1200px){
+            #col_detail{
+                width: 90%;
+            }
+        }
+
+        @media screen and (max-width:992px){
+            #col_detail{
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width:767px){
+            .sub_container2{
+                width: auto;
+            }
+        }
+    </style>
+  </head>
+  <body style="font-family: Bai Jamjuree, sans-serif;">
+    <header class="bg-info text-white d-flex align-items-center" style="height: 100px; width: 100%;">
+        <h2 class="Heading_eye">Eye Vision Optical</h2>
+    </header>
+
+    <!-- {% for msg in messages %}
+    
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Hey!</strong> {{msg}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+    {% endfor %} -->
+    <div class="container">
+        <div class="main_container d-lg-flex">
+            
+
+            <div class="sub_container">
+            <form  method="post">
+                {% csrf_token %}
+                <p class="mt-4 mb-3 fw-semibold fs-5">Basic Details</p>
+                <div class="row text-lg-start">
+                    <div class="col-12 col-xl-6">
+                        <label class="mb-2">First Name</label><br>
+                        <input type="text" name="Firstname" placeholder="Enter first Name" id="col_detail" required>
+                    </div>
+                    <div class="col-12 col-xl-6 mt-lg-0 mt-3">
+                        <label class="mb-2">Last Name</label><br>
+                        <input type="text" name="Lastname" placeholder="Enter Last Name" id="col_detail" required>
+                    </div>
+                    <div class="col-12 col-xl-6 mt-4">
+                        <label class="mb-2">Email</label><br>
+                        <input type="email" name="Email" placeholder="Enter Email" id="col_detail" required>
+                    </div>
+                    <div class="col-12 col-xl-6 mt-4" id="number">
+                        <label class="mb-2">Phone</label><br>
+                        <input type="number" name="Phone" placeholder="Enter Phone" id="col_detail" required>
+                    </div>
+                    <div class="col-12 col-xl-6 mt-4">
+                        <label class="mb-2">Address</label><br>
+                        <input type="text" name="Address" placeholder="Enter address" id="col_detail" required>
+                    </div>
+                </div>
+                <div class="row mt-5" id="city_address">
+                    <div class="col-12 col-xl-6">
+                        <label class="mb-2">City</label><br>
+                        <input type="text" name="City" placeholder="Enter city" id="col_detail" required>
+                    </div>
+                    <div class="col-12 col-xl-6 mt-lg-0 mt-3">
+                        <label class="mb-2">State</label><br>
+                        <input type="text" name="State" placeholder="Enter State" id="col_detail" required>
+                    </div>
+                    <div class="col-12 col-xl-6 mb-lg-5 mt-3">
+                        <label class="mb-2">Country</label><br>
+                        <input type="text" name="Country" placeholder="Enter Country" id="col_detail" required>
+                    </div>
+                    <div class="col-12 col-xl-6 mb-5   mt-3"  id="number">
+                        <label class="mb-2">Pin Code</label><br>
+                        <input type="number" name="Pincode" placeholder="Enter Pin Code" id="col_detail" required>
+                    </div>
+                </div>
+            </div>
+            <div class="sub_container2">
+                <div class="order_summary">
+                    <p class="mt-4 fw-semibold fs-5">Order Summary</p>
+                    <div class="product d-flex justify-content-between">
+                        <p class="mt-lg-4 fs-5 fw-medium">Product</p>
+                        <p class="mt-lg-4 fs-5 fw-medium">Qty</p>
+                        <p class="mt-lg-4 fs-5 fw-medium">Price</p>
+                    </div>                      
+        
+                    <div class="mt-5 fs-5 d-flex justify-content-between">
+                        <div class="d-flex flex-column">
+                            <img src="{% static 'Images/glass1.jpg' %}" style="height: 50px; width: 70px;">
+                            <p class=" fw-medium">CAREERA 782</p>
+                        </div>
+                        
+                        <div>
+                            <input class="qty_sub text-center" type="number" name="quantity" id="quantity" min="1" value="1">
+                            <div class="d-flex justify-content-between mt-2 user-select-none">
+                                <p type="button" class="qty_button" value="1" id="less_qty">-</p>
+                                <p type="button" class="qty_button" value="1" id="add_qty">+</p>
+                            </div>
+                            
+                        </div>
+                        <p><span class="totalPrice">2599</span></p> 
+                    </div>
+                    <div class="mt-5 fs-5 fw-semibold d-flex justify-content-between">
+                        <p>Total Amount</p>
+                        <p><span class="totalPrice">2599</span></p>
+                    </div>
+                    <button type="submit" style="width: 100%; padding: 8px; background-color: rgb(97, 151, 15); color: white; border: none; ">Place Order</button>
+                    <button style="width: 100%; padding: 8px; background-color: rgb(200, 60, 60); border: none; margin-top: 20px;"><a href="{% url 'opticals:index' %}" style="text-decoration: none; color: white; display: block;">Cancel Order</a></button>
+                </div>
+            </div>
+
+            </form>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById("add_qty").addEventListener("click", function() {
+            document.getElementById("quantity").value++;
+            updateTotalPrice();
+        });
+
+        document.getElementById("less_qty").addEventListener("click", function() {
+            document.getElementById("quantity").value--;
+            updateTotalPrice();
+        });
+
+        document.getElementById("quantity").addEventListener("change", function() {
+            // Update total price based on quantity
+            updateTotalPrice();
+        });
+ 
+        function updateTotalPrice() {
+            
+            var quantity = document.getElementById("quantity").value;
+            var totalPrice = quantity * 2599;  
+            var totalPriceElements = document.getElementsByClassName("totalPrice");
+            for (var i = 0; i < totalPriceElements.length; i++) {
+                totalPriceElements[i].textContent = totalPrice;
+            }
+        
+        }
+    </script>
+  </body>
+</html>
+    
+

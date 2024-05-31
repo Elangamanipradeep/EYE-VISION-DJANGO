@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+
+
+body{
+    
+    font-family: "Bai Jamjuree", sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#Nav_header{
+    /* background: linear-gradient(90deg, hsla(14, 52%, 26%, 0.4), hsla(0, 100%, 48%, 0.7)); */
+    background-color: rgb(246, 119, 119);
+    box-shadow: 0px 1px 25px  black;
+}
+
+#home{
+    /* background-color: rgb(108, 224, 145); */
+    background: linear-gradient(90deg, hsla(14, 52%, 26%, 0.3), hsla(0, 100%, 48%, 0.7));
+}
+
+.nav-link{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.navbar-toggler{
+    padding: 0px;
+    /* color: white; */
+    background-color: rgb(138, 131, 131);
+    border: 2px solid black;
+    outline: none;
+}
+
+.navbar-toggler-icon{
+    color: rgb(255, 255, 255);
+    /* background-image: url(images/navbar.png); */
+    width: 35px;
+}
+#Logout_page{
+    background-color: rgb(56, 55, 55);
+    color: white;
+}
+
+.scroll_icon{
+    background-color:  #ffae00;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
+    height: 80px;
+    width: 50px;
+    border-radius: 30px 30px;
+    z-index: 99;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: .4s;
+    visibility: hidden;
+}
+
+.scrolltop_icon{
+    font-size: 25px;
+    height: 80px;
+    width: 50px;
+    padding-top: 25px;
+    padding-right: 15px;
+}
+
+.show-scroll{
+    visibility: visible;
+    bottom: 1.5rem;
+}
+
+.main{
+    height: 100vh;
+}
+
+
+#home_name1{
+    font-size: 50px;
+}
+#home_name2{ 
+    font-size: 100px;
+}
+#home_vision{
+    font-size: 50px;
+}
+.contact_input input[type="number"]::-webkit-inner-spin-button,
+               input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Hide the buttons on Chrome */
+  margin: 0; /* Optional: Remove margins */
+}
+
+
+
+
+/* =============== About Page */
+#About{
+    background-color: rgb(255, 255, 255);
+    /* margin-bottom: 50px; */
+}
+
+#about_heading{
+    font-size: 50px;
+    margin-top: 80px;
+    background: linear-gradient(90deg, hsla(14,98%,50%,0.1), hsla(13, 50%, 76%, 0.8));
+}
+
+
+/* .about_img{
+    width: 350px;
+    height: 450px;
+} */
+
+#about_content{
+    font-size: 20px;
+}
+
+
+#Img_main{
+    height: 400px;
+    position: relative;
+}
+#abt_img_box_2{
+    width: 270px;
+    height: 380px;
+    border: 4px solid rgb(114, 114, 120);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#abt-img{
+    width: 280px;
+    height: 380px;
+    position: absolute;
+    border-top-right-radius: 10px;
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+
+#store{
+    background: linear-gradient(280deg, hsla(14, 52%, 26%, 0.2), hsla(0, 100%, 48%, 0.7));
+}
+
+.store_heading{
+    font-size: 40px;
+    margin-top: 100px;
+    background: linear-gradient(180deg, hsla(14,98%,50%,0), hsla(14, 68%, 77%, 0.5));
+    margin-top: 100px; 
+    color: rgb(72, 71, 69);
+}
+#store_what{
+    background: linear-gradient(90deg, hsla(13, 11%, 76%, 0.3),  hsla(14,98%,50%,0));
+}
+#card_main{
+    background-color: rgb(236, 189, 158);
+    width: 100%;
+    height: 500px;
+    padding: 20px;
+    cursor: grab;   
+    user-select: none;
+}
+
+.glass_img{
+    width: 180px;
+    height: 180px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+.card{
+    width: 100px;
+}
+
+.message{
+    width: 500px;
+}
+
+#input_name1{
+    width: 230px; 
+    margin-right: 10px; 
+    height: 40px; 
+    padding: 10px; 
+    border: 1px solid black; 
+    border-radius: 10px;
+}
+
+.input_name2{
+    width: 470px; 
+    height: 40px; 
+    padding: 10px; 
+    border: 1px solid black; 
+    border-radius: 10px;
+}
+
+#footer_main{
+    height: 100px; 
+    background: linear-gradient(280deg, hsla(14, 52%, 26%, 0.4), hsla(0, 100%, 48%, 0.8));
+}
+
+#footer_rights{
+    background: linear-gradient(280deg, hsla(14, 52%, 26%, 0.4), hsla(0, 100%, 48%, 0.8));
+    color: blue; 
+    text-align: center
+}
+
+
+
+
+/* ========== media Queries ====== */
+
+@media screen and (max-width:1200px) {
+    #home_name1{
+        font-size:40px;
+    }
+    #home_name2{
+        font-size: 80px;
+    }
+    #home_vision{
+        font-size: 40px;
+    }
+
+}
+@media screen and (max-width:992px) {
+    #home_name1{
+        font-size:30px;
+    }
+    #home_name2{
+        font-size: 70px;
+    }
+    #home_vision{
+        font-size: 30px;
+    }
+    .message{
+        width: auto;
+    }
+    #about_content{
+        font-size: 18px;
+    }
+
+    #Img_main{
+        width: 280px;
+        height: 390px;
+       
+      }
+      #abt_img_box_2{
+        width: 250px;
+        height: 360px;
+        
+      }
+      #abt-img{
+        width: 260px;
+        height: 370px;
+      }
+}
+
+@media screen and (max-width:768px) {
+    #home_name1{
+        font-size: 25px;
+    }
+    #home_name2{
+        font-size: 60px;
+    }
+    #home_vision{
+        font-size: 20px;
+    }
+    .navbar-nav{
+        text-align: center;
+        /* background-color: rgb(147, 133, 133); */
+    }
+
+    /* ====== about page */
+
+    #Img_main{
+        text-align: center;
+    }
+    #abt_img_box_2{
+        left: 100px;
+      }
+
+    #input_name1{
+        width: 400px;
+    } 
+    .input_name2{
+        width: 400px; 
+    }
+    .glass_img{
+        width: 150px;
+        height: 150px;
+    }
+}
